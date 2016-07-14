@@ -15,6 +15,7 @@
 	public $closedDate;
 	public $accountBalance;
 	public $availableBalance;
+	public $pendingBalance;
 	public $isPrimary;
 	public $isCloseable;
 	public $recurringContriubtionType;
@@ -42,9 +43,9 @@
 		return $model;	
 	} 
 
-	public function Get($accountId){
+	public function Get($customerId){
 		$requestor = new Requestor();
-		$model = $requestor->Get("/account/get/".$accountId, "Account");
+		$model = $requestor->Get("/account/get/".$customerId, "Account");
 		return $model;
 	}
 
